@@ -12,5 +12,10 @@ var firebaseConfig = {
     measurementId: "G-6Z255M0NRW"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  if(!firebase.apps.length){
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); //If already initialized, use that one
+  }
+  
   export default firebase;

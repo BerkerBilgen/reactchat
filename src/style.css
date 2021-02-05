@@ -604,6 +604,15 @@ body {
     background: #435f7a;
     color: #f5f5f5;
   }
+  #frame .content .messages ul li p.deleted {
+    font-style: italic;
+  }
+  #frame .content .messages ul li.sent p span {
+    display: block;
+    font-size: .7em;
+    text-align: right;
+  }
+  
   #frame .content .messages ul li.replies img {
     float: right;
     margin: 6px 0 0 8px;
@@ -792,4 +801,74 @@ div.register-message {
 
 div.register-message span.span-link {
     font-weight: 600;
+}
+
+video{
+  width: 200px;
+  height: 100%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.videos{
+  display: none;
+  justify-content: space-between;
+  
+}
+.active{
+  display: flex;
+}
+
+.videos div{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+#camera-body {
+  width: 20%;
+    height: auto;
+    position: fixed;
+    left: 40%;
+    background: #fff;
+    border: 3px solid #e3e3e3;
+    padding: 20px;
+    z-index: 9;
+    top: 20%;
+}
+
+#camera-body video {
+  width: 100%;
+}
+
+.calling {
+  background: #f5f5f5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 80px;
+    text-align: center;
+}
+
+.call {
+  font-size: 100px;
+  margin: 10px 30px;
+  cursor: pointer;
+}
+
+.accept {
+  color: green;
+}
+
+.reject {
+  color: red;
+}
+
+.close {
+  font-size: 30px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  display: block;
+  color: red;
 }

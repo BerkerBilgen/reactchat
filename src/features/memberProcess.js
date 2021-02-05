@@ -5,7 +5,8 @@ export const memberProcess = createSlice({
   initialState: {
     username: "",
     color: "",
-    showregisterform: ""
+    showregisterform: "",
+    showvideocall: ""
   },
   reducers: {
     setUsername: (state) => {
@@ -17,6 +18,9 @@ export const memberProcess = createSlice({
     },
     setShowRegisterForm: (state, action) => {
         state.showregisterform += action.payload;
+    },
+    setShowVideoCall: (state, action) => {
+        state.showvideocall += action.payload;
     },
     setColor: (state) => {
         state.color = state.selectedcolor;
@@ -30,7 +34,7 @@ export const memberProcess = createSlice({
   },
 });
 
-export const { setUsername, setColor, incrementByAmount, incrementColor, setShowRegisterForm } = memberProcess.actions;
+export const { setUsername, setColor, incrementByAmount, incrementColor, setShowRegisterForm, setShowVideoCall } = memberProcess.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -38,5 +42,6 @@ export const { setUsername, setColor, incrementByAmount, incrementColor, setShow
 export const memberUsername = state => state.member.username;
 export const memberColor = state => state.member.color;
 export const showRegisterForm = state => state.member.showregisterform;
+export const showVideoCall = state => state.member.showvideocall;
 
 export default memberProcess.reducer;

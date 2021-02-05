@@ -40,7 +40,8 @@ class MessageInput extends React.Component {
             message: this.state.message,
             date: Date.now(),
             username: this.props.Username,
-            color: this.props.Color
+            color: this.props.Color,
+            deleted: false
         });
 
         this.setState({"messageList": messageList, "message": ""});
