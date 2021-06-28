@@ -8,6 +8,8 @@ import {
     showRegisterForm
 } from '../features/memberProcess';
 import Register from './Register';
+import FacebookLogin from 'react-facebook-login';
+
 
 export default function Login(props) {
     const username = useSelector(memberUsername);
@@ -18,27 +20,17 @@ export default function Login(props) {
     const dispatch = useDispatch();
     var drawLoginForm = (username == "" || username == null || username == undefined);
 
+
     if (showregister == "true") {
         return ( 
             <Register />
         )
     }  
     else {
-        if (drawLoginForm) {
-            return (
-                <div id="LoginForm">
-                    <h3>Who are you?</h3>
-                    <input value={nickname} onChange={e => setNickname(e.target.value)} type="text" placeholder="Nickname" />
-                    <input type="password" placeholder="Password" />
-                    <button onClick={() => dispatch(incrementByAmount(nickname))}>Login</button>
-                    <div class="register-message">If you are not registered yet, you can register by clicking <span class="span-link" onClick={() => dispatch(setShowRegisterForm("true"))}>here</span>!</div>
-                </div>
-            );
-        } else {
+        
             return (
                 <div>
                 </div>
             );
-        }
     }
 }

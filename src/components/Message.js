@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from '../config/Config';
 import { animateScroll } from "react-scroll";
 import $ from 'jquery'; 
+import {storage} from "../config/Config";
 
 class Message extends React.Component {
     constructor(props) {
@@ -28,7 +29,19 @@ class Message extends React.Component {
         var hour = date.getUTCHours();
         var minute = date.getUTCMinutes();
         
-        var messageContent = <p className={this.props.Color}>{this.props.Text} <div> {deleteHtml} <span>{hour}:{minute}</span></div></p>;
+        var messageContent = "";
+
+        if(this.props.IsImage) {
+            messageContent = <p className={this.props.Color}><img className="message-image" src={this.props.Text} /></p>
+        } 
+        else if(this.props.IsVideo){
+            messageContent = <p className={this.props.Color}><video className="message-video"src={this.props.Text} width="2000" height="900" controls>
+            </video>
+      </p>
+        }
+        else {
+            messageContent = <p className={this.props.Color}>{this.props.Text} <div> {deleteHtml} <span>{hour}:{minute}</span></div></p>;
+        }
 
         if(this.props.Deleted){
             var className = this.props.Color + " deleted"

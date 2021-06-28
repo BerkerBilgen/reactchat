@@ -568,8 +568,8 @@ body {
   }
   #frame .content .messages {
     height: auto;
-    min-height: calc(100% - 93px);
-    max-height: calc(100% - 93px);
+    min-height: calc(100% - 230px);
+    max-height: calc(100% - 230px);
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
@@ -712,9 +712,12 @@ body {
     background: #fff;
     border: 3px solid #e3e3e3;
     padding: 20px;
-    z-index: 9;
+    z-index: 99999;
     top: 20%;
   }
+#containerFacebook{
+  top: 20%;
+}
 
   #LoginForm h3 {
       text-align: center;
@@ -871,4 +874,62 @@ video{
   text-align: center;
   display: block;
   color: red;
+}
+
+.message-image {
+  width: auto !important;
+  border-radius: 0 !important;
+  max-width: 100%;
+  padding-bottom: 30px;
+}
+
+.message-video {
+  width: auto !important;
+  border-radius: 0 !important;
+  max-width: 100%;
+  max-width: 100%;
+  padding-bottom: 30px;
+}
+
+/*  #emojis {
+  width: 100%;
+  display: flex;
+  background: #c7c7c7;
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+}  */
+
+#emojis {
+  width: 100%;
+  display: contents;
+  background: #c7c7c7;
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+} 
+
+
+#emojis ul {
+  padding: 0;
+  margin: 0;
+}
+
+#emojis ul li {
+  list-style-type: none;
+  float: left;
+  padding: 10px 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.login-form {
+  display: flow-root;
+    margin-top: 60px;
+}
+
+#emojis.hide {
+  display: none;
+}
+
+#emojis.show {
+  display: flex;
 }

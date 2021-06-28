@@ -30,7 +30,9 @@ class Messages extends React.Component {
                     date: messages[m].date,
                     username: messages[m].username,
                     color: messages[m].color,
-                    deleted: messages[m].deleted
+                    deleted: messages[m].deleted,
+                    isImage: messages[m].isImage,
+                    isVideo: messages[m].isVideo
                 });
             }
             this.setState({ messageList: newState });
@@ -96,7 +98,7 @@ class Messages extends React.Component {
                         <ul>
                             {
                                 Object.keys(this.state.messageList).map((m) => 
-                                    <Message Id={this.state.messageList[m].id} Color={this.state.messageList[m].color} Sent={this.props.Username != this.state.messageList[m].username} Username={this.state.messageList[m].username} Text={this.state.messageList[m].message} Deleted={this.state.messageList[m].deleted} Date={this.state.messageList[m].date} />
+                                    <Message Id={this.state.messageList[m].id} Color={this.state.messageList[m].color} Sent={this.props.Username != this.state.messageList[m].username} Username={this.state.messageList[m].username} Text={this.state.messageList[m].message} Deleted={this.state.messageList[m].deleted} IsImage={this.state.messageList[m].isImage} IsVideo={this.state.messageList[m].isVideo} Date={this.state.messageList[m].date} />
                                 )
                             }
                         </ul>
